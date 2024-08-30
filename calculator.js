@@ -28,3 +28,15 @@ function num1(){
 function num0(){
     document.getElementById('calculations').textContent += '0';
 }
+function opDivide(){
+    document.getElementById('calculations').textContent += '/';
+}
+function opTimes(){
+    document.getElementById('calculations').textContent += '*';
+}
+function opMinus(){
+    document.getElementById('calculations').textContent += '-';
+}
+function opPlus(){
+    document.getElementById('calculations').textContent += '+';
+}
