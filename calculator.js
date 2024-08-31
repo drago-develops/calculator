@@ -41,11 +41,23 @@ function opPlus(){
     document.getElementById('calculations').textContent += '+';
 }
 function operate(){
+    //document.getElementById('calculations').textContent += '=';
     const element = document.getElementById('calculations')
     const text = element.innerText || element.textContent;
     const result = element.innerHTML = text
     console.log(result);
-    let x = parseInt(result);
-    console.log(x)
-
+    transStringToOperation(result)
 };
+
+function transStringToOperation(str){
+    if (str.includes('+')){
+        let calcArray = str.split('+');
+        console.log(calcArray)
+        let a = parseInt(calcArray[0]);
+        let b = parseInt(calcArray[1]);
+        let c = a + b
+        console.log(c)
+        document.getElementById('answers').textContent = c;
+    }
+
+}
