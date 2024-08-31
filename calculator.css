@@ -21,16 +21,14 @@ html body{
     margin: 15px;
     background-color: lightblue;
 }
-#calculations{
+#calculationsDisplay{
     width: 461px;
-    max-width: 461px;
     height: 98px;
     border: solid 1px black;
     border-radius: 15px 15px 0px 0px;
     font-size: 90px;
     font-weight: 900;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-end;

@@ -40,3 +40,12 @@ function opMinus(){
 function opPlus(){
     document.getElementById('calculations').textContent += '+';
 }
+function operate(){
+    const element = document.getElementById('calculations')
+    const text = element.innerText || element.textContent;
+    const result = element.innerHTML = text
+    console.log(result);
+    let x = parseInt(result);
+    console.log(x)
+
+};
