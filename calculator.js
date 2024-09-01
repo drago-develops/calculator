@@ -41,12 +41,12 @@ function opPlus(){
     document.getElementById('calculations').textContent += '+';
 }
 function operate(){
-    //document.getElementById('calculations').textContent += '=';
     const element = document.getElementById('calculations')
     const text = element.innerText || element.textContent;
     const result = element.innerHTML = text
     console.log(result);
     transStringToOperation(result)
+    document.getElementById('calculations').textContent += '=';
 };
 
 function transStringToOperation(str){
@@ -84,3 +84,6 @@ function transStringToOperation(str){
         document.getElementById('answers').textContent = c;
     };
 };
+function clearButt(){
+
+}
