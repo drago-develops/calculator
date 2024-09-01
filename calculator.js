@@ -43,7 +43,7 @@ function opPlus(){
 function operate(){
     const element = document.getElementById('calculations')
     const text = element.innerText || element.textContent;
-    const result = element.innerHTML = text
+    var result = element.innerHTML = text
     console.log(result);
     transStringToOperation(result)
     document.getElementById('calculations').textContent += '=';
@@ -85,5 +85,7 @@ function transStringToOperation(str){
     };
 };
 function clearButt(){
-
+    document.getElementById('calculations').textContent = '';
+    document.getElementById('answers').textContent = '';
+    result = '';
 }
