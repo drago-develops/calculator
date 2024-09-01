@@ -57,7 +57,11 @@ function transStringToOperation(str){
         let b = parseInt(calcArray[1]);
         let c = a + b
         console.log(c)
-        document.getElementById('answers').textContent = c;
+        if (isNaN(c)){
+            document.getElementById('answers').textContent = 'Error';
+        } else {
+            document.getElementById('answers').textContent = c;
+        };
     } else if (str.includes('-')){
         let calcArray = str.split('-');
         console.log(calcArray)
@@ -65,7 +69,11 @@ function transStringToOperation(str){
         let b = parseInt(calcArray[1]);
         let c = a - b
         console.log(c)
-        document.getElementById('answers').textContent = c;
+        if (isNaN(c)){
+            document.getElementById('answers').textContent = 'Error';
+        } else {
+            document.getElementById('answers').textContent = c;
+        };
     } else if (str.includes('x')){
         let calcArray = str.split('x');
         console.log(calcArray)
@@ -73,7 +81,11 @@ function transStringToOperation(str){
         let b = parseInt(calcArray[1]);
         let c = a * b
         console.log(c)
-        document.getElementById('answers').textContent = c;
+        if (isNaN(c)){
+            document.getElementById('answers').textContent = 'Error';
+        } else {
+            document.getElementById('answers').textContent = c;
+        };
     } else if (str.includes('÷')){
         let calcArray = str.split('÷');
         console.log(calcArray)
@@ -81,7 +93,12 @@ function transStringToOperation(str){
         let b = parseInt(calcArray[1]);
         let c = a / b
         console.log(c)
-        document.getElementById('answers').textContent = c;
+        if (isNaN(c)){
+            document.getElementById('answers').textContent = 'Error';
+        } else {
+            document.getElementById('answers').textContent = c;
+        };
+        
     };
 };
 function clearButt(){
@@ -93,4 +110,12 @@ function deleteButt(){
     const text = document.getElementById('calculations').textContent
     const newText = text.substring(0, text.length -1);
     document.getElementById('calculations').textContent = newText;
+}
+function decimalButt(){
+    const string = document.getElementById('calculations').textContent
+    //let operators = ['+', '-', 'x' , '÷']
+    if (string.includes('+' || '-' || 'x' || '÷')){
+        
+    };
+
 }
