@@ -29,10 +29,10 @@ function num0(){
     document.getElementById('calculations').textContent += '0';
 }
 function opDivide(){
-    document.getElementById('calculations').textContent += '/';
+    document.getElementById('calculations').textContent += '÷';
 }
 function opTimes(){
-    document.getElementById('calculations').textContent += '*';
+    document.getElementById('calculations').textContent += 'x';
 }
 function opMinus(){
     document.getElementById('calculations').textContent += '-';
@@ -58,6 +58,29 @@ function transStringToOperation(str){
         let c = a + b
         console.log(c)
         document.getElementById('answers').textContent = c;
-    }
-
-}
+    } else if (str.includes('-')){
+        let calcArray = str.split('-');
+        console.log(calcArray)
+        let a = parseInt(calcArray[0]);
+        let b = parseInt(calcArray[1]);
+        let c = a - b
+        console.log(c)
+        document.getElementById('answers').textContent = c;
+    } else if (str.includes('x')){
+        let calcArray = str.split('x');
+        console.log(calcArray)
+        let a = parseInt(calcArray[0]);
+        let b = parseInt(calcArray[1]);
+        let c = a * b
+        console.log(c)
+        document.getElementById('answers').textContent = c;
+    } else if (str.includes('÷')){
+        let calcArray = str.split('÷');
+        console.log(calcArray)
+        let a = parseInt(calcArray[0]);
+        let b = parseInt(calcArray[1]);
+        let c = a / b
+        console.log(c)
+        document.getElementById('answers').textContent = c;
+    };
+};
