@@ -89,3 +89,8 @@ function clearButt(){
     document.getElementById('answers').textContent = '';
     result = '';
 }
+function deleteButt(){
+    const text = document.getElementById('calculations').textContent
+    const newText = text.substring(0, text.length -1);
+    document.getElementById('calculations').textContent = newText;
+}
