@@ -40,6 +40,7 @@ function opMinus(){
 function opPlus(){
     document.getElementById('calculations').textContent += '+';
 }
+
 function operate(){
     const element = document.getElementById('calculations')
     const text = element.innerText || element.textContent;
@@ -47,6 +48,12 @@ function operate(){
     console.log(result);
     transStringToOperation(result)
     document.getElementById('calculations').textContent += '=';
+};
+function checkForOperators(){
+    const expression = document.getElementById('calculations').textContent
+    if (expression.includes('+') || expression.includes('-') || expression.includes('x') || expression.includes('÷')){
+        operate();        
+    }
 };
 
 function transStringToOperation(str){
@@ -102,9 +109,9 @@ function deleteButt(){
     document.getElementById('calculations').textContent = newText;
 }
 function decimalButt(){
-    const string = document.getElementById('calculations').textContent
+    const expression = document.getElementById('calculations').textContent
     //let operators = ['+', '-', 'x' , '÷']
-    if (string.includes('+' || '-' || 'x' || '÷')){
+    if (expression.includes('+') || expression.includes('-') || expression.includes('x') || expression.includes('÷')){
         
     };
 
