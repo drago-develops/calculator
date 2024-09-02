@@ -55,9 +55,10 @@ function checkForOperators(){
         //operate(); 
         const removeLastOp = document.getElementById('answer').textContent;
         const cleanEquation = removeLastOp.substring(0, removeLastOp.length-1);
-        document.getElementById('answer').textContent = cleanEquation;       
-    }
+        document.getElementById('answer').textContent = cleanEquation;
+    };
 };
+
 
 function transStringToOperation(str){
     if (str.includes('+')){
