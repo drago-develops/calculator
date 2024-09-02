@@ -52,7 +52,10 @@ function operate(){
 function checkForOperators(){
     const expression = document.getElementById('calculations').textContent
     if (expression.includes('+') || expression.includes('-') || expression.includes('x') || expression.includes('÷')){
-        operate();        
+        //operate(); 
+        const removeLastOp = document.getElementById('answer').textContent;
+        const cleanEquation = removeLastOp.substring(0, removeLastOp.length-1);
+        document.getElementById('answer').textContent = cleanEquation;       
     }
 };
 
