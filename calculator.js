@@ -91,7 +91,7 @@ function transStringToOperation(str){
         let b = parseFloat(calcArray[1]);
         let c = a * b
         console.log(c)
-        isAnswerNan(c).toFixed(2);
+        isAnswerNan(c.toFixed(2));
     } else if (str.includes('÷')){
         let calcArray = str.split('÷');
         console.log(calcArray)
@@ -120,12 +120,17 @@ function deleteButt(){
     document.getElementById('calculations').textContent = newText;
 }
 
-//no time, finish of tomorrow
+
 function decimalButt(){
-    const expression = document.getElementById('calculations').textContent
-    if (expression.includes('+') || expression.includes('-') || expression.includes('x') || expression.includes('÷')){
-        
-    } else if (expression.includes('.')){
+    const expr = document.getElementById('calculations').textContent
+    if (expr.includes('+') || expr.includes('-') || expr.includes('x') || expr.includes('÷')){
+        const calArray = expr.split(/[+\-x÷]/)
+        if (calArray[1] && calArray[1].includes('.')){
+            console.log('using second decimal not allowed!')
+        } else{
+            document.getElementById('calculations').textContent += '.';
+        }    
+    } else if (expr.includes('.')){
         Error
     } else {
         document.getElementById('calculations').textContent += '.'
