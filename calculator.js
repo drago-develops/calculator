@@ -58,41 +58,48 @@ function checkForOperators(){
         document.getElementById('answer').textContent = cleanEquation;
     };
 };
-
+//issue with below func need to fix it tommorow
+function useAnswer(){
+    const ans = document.getElementById('answer')
+    if (ans !== null){
+        document.getElementById('calculations').textContent = ans
+    } else { console.log('check')
+    }
+}
 
 function transStringToOperation(str){
     if (str.includes('+')){
         let calcArray = str.split('+');
         console.log(calcArray)
-        let a = parseInt(calcArray[0]);
-        let b = parseInt(calcArray[1]);
+        let a = parseFloat(calcArray[0]);
+        let b = parseFloat(calcArray[1]);
         let c = a + b
         console.log(c)
-        isAnswerNan(c);
+        isAnswerNan(c.toFixed(2));
     } else if (str.includes('-')){
         let calcArray = str.split('-');
         console.log(calcArray)
-        let a = parseInt(calcArray[0]);
-        let b = parseInt(calcArray[1]);
+        let a = parseFloat(calcArray[0]);
+        let b = parseFloat(calcArray[1]);
         let c = a - b
         console.log(c)
-        isAnswerNan(c);
+        isAnswerNan(c.toFixed(2));
     } else if (str.includes('x')){
         let calcArray = str.split('x');
         console.log(calcArray)
-        let a = parseInt(calcArray[0]);
-        let b = parseInt(calcArray[1]);
+        let a = parseFloat(calcArray[0]);
+        let b = parseFloat(calcArray[1]);
         let c = a * b
         console.log(c)
-        isAnswerNan(c);
+        isAnswerNan(c).toFixed(2);
     } else if (str.includes('÷')){
         let calcArray = str.split('÷');
         console.log(calcArray)
-        let a = parseInt(calcArray[0]);
-        let b = parseInt(calcArray[1]);
+        let a = parseFloat(calcArray[0]);
+        let b = parseFloat(calcArray[1]);
         let c = a / b
         console.log(c)
-        isAnswerNan(c);        
+        isAnswerNan(c.toFixed(2));        
     };
 };
 function isAnswerNan(ans){
@@ -112,11 +119,16 @@ function deleteButt(){
     const newText = text.substring(0, text.length -1);
     document.getElementById('calculations').textContent = newText;
 }
+
+//no time, finish of tomorrow
 function decimalButt(){
     const expression = document.getElementById('calculations').textContent
-    //let operators = ['+', '-', 'x' , '÷']
     if (expression.includes('+') || expression.includes('-') || expression.includes('x') || expression.includes('÷')){
         
-    };
+    } else if (expression.includes('.')){
+        Error
+    } else {
+        document.getElementById('calculations').textContent += '.'
+    }
 
 }
