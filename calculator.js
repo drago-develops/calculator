@@ -59,13 +59,16 @@ function checkForOperators(){
     };
 };
 //issue with below func need to fix it tommorow
-function useAnswer(){
-    const ans = document.getElementById('answer')
-    if (ans !== null){
-        document.getElementById('calculations').textContent = ans
-    } else { console.log('check')
-    }
-}
+// function useAnswer(){
+//     const ansText = document.getElementById('answer')
+//     if (ansText == ''){
+//         console.log('check useAnswer')
+//     } else { 
+//         const usePreviousResult = document.getElementById('answers').textContent
+//         document.getElementById('calculations').textContent = usePreviousResult;
+
+//     }
+// }
 
 function transStringToOperation(str){
     if (str.includes('+')){
