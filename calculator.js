@@ -40,9 +40,9 @@ function opMinus(){
 function opPlus(){
     document.getElementById('calculations').textContent += '+';
 }
+
 document.addEventListener('keydown', (event) =>{
     let key = event.key
-    console.log(key)
     let keyCode = event.which
     if (keyCode > 95 && keyCode < 108 || keyCode > 188 && keyCode < 191 || keyCode > 47 && keyCode < 58) {
         document.getElementById('calculations').textContent += key
@@ -58,7 +58,6 @@ document.addEventListener('keydown', (event) =>{
     } else if (keyCode == 187){
         opPlus();
     }
-    console.log(keyCode)
 })
 
 function operate(){
@@ -72,23 +71,11 @@ function operate(){
 function checkForOperators(){
     const expression = document.getElementById('calculations').textContent
     if (expression.includes('+') || expression.includes('-') || expression.includes('x') || expression.includes('÷')){
-        //operate(); 
         const removeLastOp = document.getElementById('answer').textContent;
         const cleanEquation = removeLastOp.substring(0, removeLastOp.length-1);
         document.getElementById('answer').textContent = cleanEquation;
     };
 };
-//issue with below func need to fix it tommorow
-// function useAnswer(){
-//     const ansText = document.getElementById('answer')
-//     if (ansText == ''){
-//         console.log('check useAnswer')
-//     } else { 
-//         const usePreviousResult = document.getElementById('answers').textContent
-//         document.getElementById('calculations').textContent = usePreviousResult;
-
-//     }
-// }
 
 function transStringToOperation(str){
     if (str.includes('+')){
