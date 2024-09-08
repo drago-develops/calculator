@@ -42,19 +42,23 @@ function opPlus(){
 }
 document.addEventListener('keydown', (event) =>{
     let key = event.key
+    console.log(key)
     let keyCode = event.which
     if (keyCode > 95 && keyCode < 108 || keyCode > 188 && keyCode < 191 || keyCode > 47 && keyCode < 58) {
         document.getElementById('calculations').textContent += key
     }
-     else if (keyCode == 187 || keyCode == 13){
+     else if (keyCode == 13){
         operate();
-    } else if ( keyCode == 8){
+    } else if (keyCode == 8){
         deleteButt();
     } else if (keyCode == 191){
         opDivide();
     } else if (keyCode == 88){
         opTimes();
+    } else if (keyCode == 187){
+        opPlus();
     }
+    console.log(keyCode)
 })
 
 function operate(){
