@@ -1,6 +1,8 @@
 html body{
     background-color: rgb(221, 220, 220);
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -106,3 +108,12 @@ button:active{
     justify-content: space-around;
     margin-left: 5px;
 }
+img:hover{
+    height: 55px;
+    width: 55px;
+}
+footer{
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
