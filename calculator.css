@@ -23,7 +23,7 @@ html body{
     margin: 15px;
     background-color: lightblue;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow: auto;
     white-space: nowrap;
     font-size: 90px;
     font-weight: 900;
@@ -38,7 +38,7 @@ html body{
     align-items: center;
     justify-content: flex-end;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow: auto;
     white-space: nowrap;
 }
 
